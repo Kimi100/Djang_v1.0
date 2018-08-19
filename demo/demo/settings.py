@@ -17,10 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import sys
 
-# print(BASE_DIR, sys.path)
-
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__))))
-# print(BASE_DIR, sys.path)
+sys.path.insert(0, os.path.join(0, os.path.join(BASE_DIR, 'apps')))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -43,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'users.apps.UsersConfig'
 
 )
 
@@ -163,6 +161,9 @@ REST_FRAMEWORK = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+
+# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 LANGUAGE_CODE = 'zh-Hans'
 
